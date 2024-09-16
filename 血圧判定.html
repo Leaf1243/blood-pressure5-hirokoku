@@ -24,29 +24,27 @@
                 <p>収縮期血圧（上の血圧）を入力してください</p>
                 <p>拡張期血圧（下の血圧）を入力してください</p><br>
             </section>
-        <py-script>
-        def check_blood_pressure(systolic, diastolic):
-    if systolic >= 160 or diastolic >= 100:
-        return "Ⅲ度高血圧です。医師に相談してください。"
-    elif 145 <= systolic < 160 or 90 <= diastolic < 100:
-        return "ⅱ度高血圧です。生活習慣を見直しましょう。"
-    elif 135 <= systolic < 145 or 85 <= diastolic < 90:
-        return "Ⅰ度高血圧です。生活習慣を見直しましょう。"
-    elif 125 <= systolic < 135 or diastolic < 85:
-        return "高値血圧です。生活習慣を見直しましょう。"
-    elif 115 <= systolic < 125 or diastolic < 85:
-        return "正常高値血圧です。生活習慣を見直しましょう。"
-    else:
-        return "正常血圧です。"
+        <script>
+        function checkBP() {
+            const systolic = document.getElementById('systolic').value;
+            const diastolic = document.getElementById('diastolic').value;
+            let resultText = '';
 
-# ユーザーからの入力を受け取る
-systolic = int(input("収縮期血圧（上の血圧）を入力してください: "))
-diastolic = int(input("拡張期血圧（下の血圧）を入力してください: "))
+            if (systolic < 120 && diastolic < 80) {
+                resultText = '正常血圧';
+            } else if (systolic < 130 && diastolic < 80) {
+                resultText = '正常高値血圧';
+            } else if (systolic < 140 || diastolic < 90) {
+                resultText = '高血圧ステージ1';
+            } else if (systolic < 180 || diastolic < 120) {
+                resultText = '高血圧ステージ2';
+            } else {
+                resultText = '高血圧緊急症';
+            }
 
-# 判定結果を表示
-result = check_blood_pressure(systolic, diastolic)
-print(result)
-    </py-script>
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
     </main><br><br>
     <p>判定結果はあくまでも基準値によるものであり、絶対的なものではありません</p>
     
