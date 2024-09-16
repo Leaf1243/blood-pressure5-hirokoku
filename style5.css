@@ -1,0 +1,20 @@
+*{padding: 0;margin: 0;}
+header{
+    background-color: beige;
+    padding: 30;
+    text-align: center;
+    }
+header h1{font-size: 50;margin-bottom: 20;margin-top: 20;color: red;}
+header nav ul{display: flex;justify-content: space-around;list-style: none;}
+header nav li a{
+    color: black ;
+   text-decoration: none;}
+.back{text-align: center;}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;}
