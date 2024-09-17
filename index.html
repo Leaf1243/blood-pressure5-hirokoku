@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>血圧判定</title>
     <link rel="stylesheet" href="style5.css">
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>
 <body>
-    
     <header class="title"><h1>blood pressure</h1>
             <nav>
                 <ul class="menu">
@@ -25,17 +22,17 @@
                 <p>拡張期血圧（下の血圧）を入力してください</p><br>
             </section>
             <div class="container">
-        <h1>血圧判定プログラム</h1>
-        <label for="systolic">収縮期血圧 (mmHg):</label>
-        <input type="number" id="systolic" placeholder="例: 120">
+                <h1>血圧判定プログラム</h1>
+                <label for="systolic">収縮期血圧 (mmHg):</label>
+                <input type="number" id="systolic" placeholder="例: 120">
         
-        <label for="diastolic">拡張期血圧 (mmHg):</label>
-        <input type="number" id="diastolic" placeholder="例: 80">
+                <label for="diastolic">拡張期血圧 (mmHg):</label>
+            <input type="number" id="diastolic" placeholder="例: 80">
         
-        <button onclick="determineBloodPressure()">判定</button>
+            <button onclick="determineBloodPressure()">判定</button>
         
-        <div class="result" id="result"></div>
-    </div>
+            <div class="result" id="result"></div>
+        </div>
         <script>
         function checkBP() {
             const systolic = document.getElementById('systolic').value;
