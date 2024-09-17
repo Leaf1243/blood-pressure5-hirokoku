@@ -24,6 +24,18 @@
                 <p>収縮期血圧（上の血圧）を入力してください</p>
                 <p>拡張期血圧（下の血圧）を入力してください</p><br>
             </section>
+            <div class="container">
+        <h1>血圧判定プログラム</h1>
+        <label for="systolic">収縮期血圧 (mmHg):</label>
+        <input type="number" id="systolic" placeholder="例: 120">
+        
+        <label for="diastolic">拡張期血圧 (mmHg):</label>
+        <input type="number" id="diastolic" placeholder="例: 80">
+        
+        <button onclick="determineBloodPressure()">判定</button>
+        
+        <div class="result" id="result"></div>
+    </div>
         <script>
         function checkBP() {
             const systolic = document.getElementById('systolic').value;
